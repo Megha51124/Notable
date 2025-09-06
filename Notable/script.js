@@ -224,30 +224,41 @@ function showStep(step) {
   // we are looking for
 
   const line = document.getElementById('line');
-  const lineObserver = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        line.classList.add('scale-y-100'); 
-      }
-    });
-  }, { threshold: 0.4 }); 
-  
-  lineObserver.observe(line);
+
+const lineObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      // animate in
+      line.classList.add('scale-y-100');
+      line.classList.remove('scale-y-0'); // reset start state
+    } else {
+      // reset when leaving viewport
+      line.classList.remove('scale-y-100');
+      line.classList.add('scale-y-0');
+    }
+  });
+}, { threshold: 0.4 });
+
+lineObserver.observe(line);
 
 
 // Meet our product section
-  window.addEventListener('DOMContentLoaded', () => {
-    const boxes = document.querySelectorAll('.animate-on-scroll');
+window.addEventListener('DOMContentLoaded', () => {
+  const boxes = document.querySelectorAll('.animate-on-scroll');
 
-    const observer2 = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.remove('opacity-0', 'translate-y-10'); // match your initial class
-          entry.target.classList.add('opacity-100', 'translate-y-0');
-          obs.unobserve(entry.target); // animate only once
-        }
-      });
-    }, { threshold: 0.2 });
+  const observer2 = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        // animate in
+        entry.target.classList.remove('opacity-0', 'translate-y-10');
+        entry.target.classList.add('opacity-100', 'translate-y-0');
+      } else {
+        // reset when leaving viewport
+        entry.target.classList.remove('opacity-100', 'translate-y-0');
+        entry.target.classList.add('opacity-0', 'translate-y-10');
+      }
+    });
+  }, { threshold: 0.2 });
 
-    boxes.forEach(box => observer2.observe(box));
-  });
+  boxes.forEach(box => observer2.observe(box));
+});
