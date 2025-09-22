@@ -124,7 +124,7 @@
         <div
           class="  hero-text opacity-0 -translate-x-20 transition-all duration-1000 ease-out text-center flex flex-col items-center justify-center lg:text-left lg:items-start lg:justify-start mt-28 ">
           <p class="font-semibold text-4xl tracking-tight ">
-            Introducing <span class="block">India's </span>
+            Introducing <span class="block"></span>
           </p>
 
           <h1 class="text-5xl lg:text-6xl font-bold leading-tight font-roma">
@@ -164,77 +164,131 @@
         </p>
       </div>
     </div>
+   
 
 
+<!-- Third Section (Goal and Vision) -->
+<section id="outer" class="bg-[#2B2424] mt-10">
 
-
-    <!-- Third Section (Goal and Vision) -->
-    <section id="outer" class="lg:max-w-8xl lg:mx-auto  px-4 md:px-8 py-12  bg-[#2B2424] mt-10   ">
-      <!-- Scrollytelling wrapper -->
-      <div class="scrolly ">
-
-        <!-- STICKY VIEWPORT: stays in place while triggers scroll -->
-        <div id="viewport" class="viewport sticky-container sticky top-20">
-          <!-- VIDEO -->
-          <div class="video-col">
-            <div class="video-box">
-              <video id="leftVideo" class="video-size rounded-2xl shadow-xl lg:mt-16 md:-mt-16 " autoplay muted loop
-                playsinline>
-                <source src="images/generated-video.mp4" type="video/mp4">
-              </video>
-              <button id="soundToggle" class="sound-btn lg:ml-20">
-                Enable sound
-              </button>
-            </div>
-          </div>
-
-          <!-- TEXT DISPLAY -->
-          <div class="text-col  ">
-            <div id="display" class="">
-              <!-- Goal -->
-              <div id="step-goal"
-                class="step-panel lg:mx-auto active lg:flex lg:flex-col lg:justify-center md:-mt-19 lg:-mb-14 flex flex-col mt-48 ">
-                <span
-                  class="badge bg-[#746161] text-white  text-sm self-start md:pl-8 md:pr-8 md:pt-4 md:pb-4 lg:mt-10 px-8 py-4 md:text-lg rounded-full  -mt-20 ">GOAL</span>
-                <h2 class="title text-white text-[1.5rem] md:text-3xl mt-4 ">
-                  To empower students through <span class="shadow-text">focused and <br> distraction-free
-                    learning</span>
-                </h2>
-                <p class="desc  text-lg md:text-lg ">
-                  It is designed for deep work, effective note-taking, and smart planning - <br> without social media or
-                  unnecessary apps.
-                </p>
-              </div>
-
-              <!-- Vision -->
-              <div id="step-vision"
-                class="step-panel  lg:flex lg:flex-col lg:justify-center md:-mt-19 lg:-mb-14 flex flex-col mt-48">
-                <span
-                  class="badge bg-[#746161] text-white md:pl-8 md:pr-8 md:pt-4 md:pb-4 md:text-lg self-start text-sm lg:mt-10 px-8 py-4 -mt-20">VISION</span>
-                <h2 class="title text-white text-[1.5rem] md:text-3xl mt-4">
-                  We envision a <span class="shadow-text">fully digital yet focused <br> education system for
-                    India.</span>
-                </h2>
-                <p class="desc  text-lg md:text-lg">
-                  By partnering with schools to build learning environments that <br> combine the right mix of hardware
-                  and
-                  software — enabling <br> students to thrive without digital noise.
-                </p>
-              </div>
-            </div>
-          </div>
+  <!-- DESKTOP VIEW (lg and above) -->
+  <div class="hidden lg:block max-w-8xl mx-auto px-4 md:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-2">
+      <!-- Left: Sticky Video -->
+      <div class="sticky top-0 h-screen flex flex-col">
+        <video class="video-size object-cover rounded-2xl shadow-xl w-110 mt-28" autoplay muted loop playsinline>
+          <source src="images/generated-video.mp4" type="video/mp4">
+        </video>
+        <div class="relative">
+          <button id="soundToggleDesktop"
+          class=" sound-btn  px-4 py-2 rounded-full  text-sm self-center md:self-start">
+          Enable sound
+        </button>
         </div>
-
-        <!-- SCROLL TRIGGERS (provide scroll length, control which panel is active) -->
-        <div class="steps ">
-          <div class="step-trigger" data-step="goal"></div>
-          <div class="step-trigger" data-step="vision"></div>
-        </div>
-
+      
       </div>
-    </section>
 
+      <!-- Right: Scrolling Text -->
+      <div class="p-6 md:p-10">
+        <!-- GOAL -->
+        <section class="h-screen flex flex-col justify-center" data-animate>
+          <span
+            class="badge bg-[#746161] text-white text-sm md:text-lg px-6 py-2 rounded-full w-max">
+             GOAL
+          </span>
+          <h2 class="title text-white text-xl md:text-3xl mt-4">
+            To empower students through <span class="shadow-text">focused and <br class="hidden md:block">distraction-free
+              learning</span>
+          </h2>
+          <p class="desc text-base md:text-lg mt-3">
+            It is designed for deep work, effective note-taking, and smart planning — without social media or unnecessary apps.
+          </p>
+        </section>
+
+        <!-- VISION -->
+        <section class="h-screen flex flex-col justify-center" data-animate>
+          <span
+            class="badge bg-[#746161] text-white text-sm md:text-lg px-6 py-2 rounded-full w-max">
+            VISION
+          </span>
+          <h2 class="title text-white text-xl md:text-3xl mt-4">
+            We envision a <span class="shadow-text">fully digital yet focused <br class="hidden md:block">education system for
+              India.</span>
+          </h2>
+          <p class="desc text-base md:text-lg mt-3">
+            By partnering with schools to build learning environments that combine the right mix of hardware and software —
+            enabling students to thrive without digital noise.
+          </p>
+        </section>
+      </div>
+    </div>
   </div>
+
+  <!-- MOBILE VIEW (below lg) -->
+  <div class="block lg:hidden px-4 md:px-8 py-12">
+    <div class="scrolly">
+
+      <!-- Sticky viewport -->
+      <div id="viewport" class="viewport sticky-container sticky top-20">
+        <div class="video-col">
+          <div class="video-box">
+            <video id="leftVideoMobile"
+              class="video-size rounded-2xl shadow-xl" autoplay muted loop playsinline>
+              <source src="images/generated-video.mp4" type="video/mp4">
+            </video>
+            <button id="soundToggleMobile" class="sound-btn mt-4">
+              Enable sound
+            </button>
+          </div>
+        </div>
+
+        <!-- Text -->
+        <div class="text-col">
+          <div id="display" class="-mt-12">
+            <!-- Goal -->
+            <div id="step-goal"
+              class="step-panel flex flex-col mt-48">
+              <span
+                class="badge bg-[#746161] text-white text-sm px-6 py-3 rounded-full w-max">
+                GOAL
+              </span>
+              <h2 class="title text-white text-xl mt-4">
+                To empower students through <span class="shadow-text">focused and <br> distraction-free
+                  learning</span>
+              </h2>
+              <p class="desc text-base mt-3">
+                It is designed for deep work, effective note-taking, and smart planning — without social media or unnecessary apps.
+              </p>
+            </div>
+
+            <!-- Vision -->
+            <div id="step-vision"
+              class="step-panel flex flex-col mt-48">
+              <span
+                class="badge bg-[#746161] text-white text-sm px-6 py-3 rounded-full w-max">
+                  VISION
+              </span>
+              <h2 class="title text-white text-xl mt-4">
+                We envision a <span class="shadow-text">fully digital yet focused <br> education system for
+                  India.</span>
+              </h2>
+              <p class="desc text-base mt-3">
+                By partnering with schools to build learning environments that combine the right mix of hardware and software —
+                enabling students to thrive without digital noise.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll triggers -->
+      <div class="steps">
+        <div class="step-trigger" data-step="goal"></div>
+        <div class="step-trigger" data-step="vision"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
 
   <!-- Meet our product section -->
@@ -255,7 +309,7 @@
 
   <!-- first two rectangle -->
 
-  <div class="flex gap-[20px] w-[380px] pt-[70px] lg:-mt-[60px] lg:mb-[20px] ml-[45px] lg:w-[550px]">
+  <div class="flex gap-[20px] pt-[70px] lg:-mt-[60px] lg:mb-[20px] ml-[10px] lg:w-[550px]">
     <div
       class="animate-on-scroll lg:w-[260px] w-[180px] h-[125px]  lg:ml-[120px] lg:h-[165px] bg-[#403838] rounded-2xl lg:p-6 flex flex-col justify-between relative overflow-hidden opacity-0 translate-y-10 transition-all duration-700">
       <img src="images/Frame 24.svg" alt="Tablet" class="absolute top-0 right-0 lg:w-32 w-24 h-auto rounded shadow-lg">
@@ -278,7 +332,7 @@
 
   <!-- middle rectangle -->
   <div
-    class="animate-on-scroll w-[250px] lg:mb-[20px] lg:w-[260px] mt-[20px] lg:mt-[20px] ml-[90px] lg:ml-[190px] h-[70px] bg-[#E7E1E1] rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden opacity-0 translate-y-10 transition-all duration-700">
+    class="animate-on-scroll w-[250px] lg:mb-[20px] lg:w-[260px] mt-[20px] lg:mt-[20px] ml-[60px] lg:ml-[190px] h-[70px] bg-[#E7E1E1] rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden opacity-0 translate-y-10 transition-all duration-700">
     <img src="images/distraction.svg" alt="com" class="absolute center -mt-[6px] left-[15px] w-[35px] h-[35px] ">
     <p
       class="text-black text-center ml-[44px] -mt-[2px] absolute-center text-[23px] font-Roma font-semibold leading-[23px]">
@@ -287,7 +341,7 @@
   </div>
 
   <!-- last two rectangle -->
-  <div class="flex gap-[20px] mt-[20px] ml-[45px] w-[380px] lg:w-[550px]">
+  <div class="flex gap-[20px] mt-[20px] ml-[10px] lg:w-[550px]">
     <div
       class="animate-on-scroll lg:w-[170px] w-[120px] h-[90px] ml-[9] lg:ml-[120px] lg:h-[110px] bg-[#E7E1E1] rounded-2xl p-6 flex flex-row justify-between relative overflow-hidden opacity-0 translate-y-10 transition-all duration-700">
       <img src="images/light weight.svg" alt="light weight"
@@ -324,9 +378,9 @@
 
 
   <div
-    class="flex gap-[12px] lg:flex gap-[20px] absolute lg:right-10 lg:mt-16 w-[380px] h-[400px] ml-[25px] lg:h-[500px] mt-[70px] lg:w-[550px]">
+    class="flex gap-[1px] lg:flex gap-[20px] absolute lg:right-10 lg:mt-16 ml-[5px] h-[400px] lg:h-[500px] mt-[70px] lg:w-[550px]">
     <div
-      class="animate-on-scroll lg:w-[170px] w-[100px] h-[100px] lg:h-[150px] lg:mt-28 mt-[100px] bg-[#544848] rounded-2xl mx-auto flex flex-col justify-between relative overflow-hidden opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
+      class="animate-on-scroll lg:w-[170px] w-[80px] h-[100px] lg:h-[150px] lg:mt-28 mt-[100px] bg-[#544848] rounded-2xl flex flex-col justify-between relative overflow-hidden opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
       <img src="images/focus mode.svg" alt="battery" class=" w-[35px] lg:w-[50px] aspect-square mx-auto mt-3 lg:mt-4">
       <p
         class="text-white text-center mt-[7px] lg:px-4 lg:pb-4 text-[18px] lg:text-[22px] font-Roma font-semibold leading-[20px] lg:leading-[23px]">
@@ -334,7 +388,7 @@
     </div>
 
     <div
-      class="animate-on-scroll lg:w-[170px] lg:h-[150px] w-[100px] h-[100px]  lg:mt-28 bg-[#544848] mt-[100px] rounded-2xl  flex flex-col justify-between relative overflow-hidden opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
+      class="animate-on-scroll lg:w-[170px] lg:h-[150px] w-[100px] h-[100px] -ml-[10px] lg:mt-28 bg-[#544848] mt-[100px] rounded-2xl  flex flex-col justify-between relative overflow-hidden opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
       <img src="images/assignment.svg" alt="battery" class="w-[35px] lg:w-[60px] aspect-square mx-auto mt-3 lg:mt-4">
       <p
         class="text-white text-center lg:px-4 lg:pb-4  mt-[8px] ml-1 lg:-ml-2  text-[17px] lg:text-[22px] font-Roma font-semibold leading-[21px]">
@@ -342,7 +396,7 @@
     </div>
 
     <div
-      class="animate-on-scroll w-[150px] h-[180px] lg:w-[270px] lg:mr-[50px] lg:h-[263px] bg-[#DED6D6] rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
+      class="animate-on-scroll w-[150px] h-[180px] lg:w-[270px] lg:mr-[50px] mt-[22px] -ml-[10px] lg:h-[263px] bg-[#DED6D6] rounded-2xl p-6 flex flex-col justify-between relative overflow-hidden opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
       <img src="images/teacher dashboard final.svg" alt="Tablet"
         class="absolute top-0 left-0 lg:w-32 lg:h-40 w-[80px] h-[100px] shadow-md">
       <p
@@ -354,7 +408,7 @@
 
   <!-- last two rectangle -->
   <div
-    class="flex gap-[12px] lg:flex gap-[20px] lg:pt-[40px] lg:ml-[200px] ml-6 absolute mt-[20px] lg:mt-[20px] lg:right-10">
+    class="flex gap-[12px] lg:flex gap-[20px] lg:pt-[40px] lg:ml-[200px] ml-2 absolute mt-[20px] lg:mt-[20px] lg:right-10">
     <div
       class="animate-on-scroll lg:w-[180px] w-[180px] h-[180px] lg:mt-[290px] lg:-mr-64 lg:h-[18 0px] bg-[#DED6D6] rounded-2xl mt-[270px] p-6 flex flex-col justify-between relative overflow-hidden opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
       <p class="text-black text-center lg:-mt-2 text-[20px] lg:text-[22px] font-Roma font-semibold leading-[23px]">
@@ -365,7 +419,7 @@
     </div>
 
     <div
-      class="animate-on-scroll lg:w-[280px] h-[120px] w-[155px] lg:h-[40] lg:mt-[290px] mt-[270px] lg:mr-20 lg:ml-64  lg:h-[80px] bg-[#544848] rounded-2xl flex flex-col justify-between relative overflow-hidden opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
+      class="animate-on-scroll lg:w-[280px] h-[120px] w-[155px] -ml-[11px] lg:h-[40] lg:mt-[290px] mt-[270px] lg:mr-20 lg:ml-64  lg:h-[80px] bg-[#544848] rounded-2xl flex flex-col justify-between relative overflow-hidden opacity-0 translate-y-10 transform transition-all duration-700 ease-out">
       <img src="images/cloud sync.svg" alt="com"
         class=" w-[55px] h-[55px] lg:w-[45px] lg:h-[45px] mx-auto  mt-2 lg:ml-1 absolute lg:mt-3 ml-[50px]">
 
@@ -379,9 +433,9 @@
 
 
   <!-- we are looking for -->
-  <div class="lg:w-[1150px]  ml-[20px] lg:mb-[300px] w-[380px] lg:h-[1300px]  lg:mx-auto  ">
+  <div class="lg:w-[1150px] lg:mb-[300px] w-[360px] lg:h-[1300px] lg:mx-auto  ">
     <div id="contact-us"
-      class="lg:w-[1150px]  md:w-[1000px] md:h-[800px] w-[380px] h-[1100px]  lg:py-32  mt-[600px]  bg-[#544848] w-20xl rounded  mx-auto  shadow-2xl shadow-black/55 flex felx-col flex items-center ">
+      class="lg:w-[1150px]  md:w-[1000px] md:h-[800px] w-[340px] h-[1100px]  lg:py-32  mt-[600px]  bg-[#544848] w-20xl rounded  mx-auto  shadow-2xl shadow-black/55 flex felx-col flex items-center ">
 
 
       <!-- Left vertical line  -->
@@ -395,7 +449,7 @@
         <p class="font-Roma text-white text-3xl lg:text-4xl font-semibold leading-none">for</p>
       </div>
 
-      <div class="lg:pt-[580px] text-center lg:text-left -ml-[250px] mt-[1000px] lg:-mt-1 lg:-ml-[430px]">
+      <div class="lg:pt-[580px] text-center lg:text-left -ml-[260px] mt-[1000px] lg:-mt-1 lg:-ml-[430px]">
         <p class="font-Roma text-white text-2xl lg:text-lg font-regular leading-tight font-bold">Contact us at</p>
         <p class="font-Roma text-white text-2xl lg:text-2xl font-bold leading-tight">+917776977173</p>
         <p class="font-Roma text-white text-2xl lg:text-2xl font-bold leading-tight">notableofficiall@gmail.com</p>
@@ -403,21 +457,21 @@
       </div>
 
       <!-- advisors -->
-      <img src="images/advisors and investors.svg" alt="com" class="absolute lg:mt-[370px] mx-auto -mt-[460px] ml-[50px] lg:ml-[600px] md:ml-[530px]  transform transition duration-300 
+      <img src="images/advisors and investors.svg" alt="com" class="absolute lg:mt-[370px] mx-auto -mt-[460px] ml-[30px] lg:ml-[600px] md:ml-[530px]  transform transition duration-300 
             hover:scale-110  lg:w-[320px] w-[280px] h-[280px] lg:h-[240px]  ">
       <!-- technical parteners -->
       <img src="images/tech partener final.svg" alt="com"
         class="absolute lg:left-2/3 lg:-translate-x-1/2 lg:-translate-y-1/2 transform transition duration-300 
-            hover:scale-110  ml-[50px] lg:mt-[340px] mt-[90px] md:ml-[170px] lg:ml-[200px] lg:w-[355px] w-[280px] h-[280px] lg:h-[240px]">
+            hover:scale-110  ml-[30px] lg:mt-[340px] mt-[90px] md:ml-[170px] lg:ml-[200px] lg:w-[355px] w-[280px] h-[280px] lg:h-[240px]">
       <!-- educational institues -->
-      <img src="images/educational partnerss.svg" alt="com" class="absolute lg:-mt-[320px] lg:ml-[550px] md:ml-[500px] mt-[590px] ml-[50px] transform transition duration-300 lg:-mb-12
+      <img src="images/educational partnerss.svg" alt="com" class="absolute lg:-mt-[320px] lg:ml-[550px] md:ml-[500px] mt-[590px] ml-[30px] transform transition duration-300 lg:-mb-12
             hover:scale-110  lg:w-[375px] w-[280px] h-auto lg:h-[240px]">
     </div>
   </div>
 
 
   <!-- Footer -->
-  <footer id="footer" class="bg-gradient-to-b from-[#362D2D]  lg:-mb-12  to-black text-white px-6 md:px-12 mt-16 ">
+  <footer id="footer" class="bg-gradient-to-b from-[#362D2D]  lg:-mb-12  to-black text-white px-6 md:px-12 mt-16  ">
     <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-7">
       <!--  -->
       <!-- Left: Brand & Social -->
@@ -481,7 +535,7 @@
       </div>
 
       <!-- Bottom Copyright -->
-      <div class=" ml-10 mt-2 text-sm text-gray-400 hover:text-white text-center">
+      <div class=" mt-2 text-sm text-gray-400 hover:text-white text-center">
         <p class="mb-2">© 2025 Notable. All rights reserved. <br>
           Notable | Focused Learning. Digitally Simplified.</p>
       </div>

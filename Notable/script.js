@@ -262,3 +262,41 @@ window.addEventListener('DOMContentLoaded', () => {
 
   boxes.forEach(box => observer2.observe(box));
 });
+
+
+// Goal and vision
+
+ // Desktop sound toggle
+  const videoDesktop = document.querySelector('#soundToggleDesktop')?.previousElementSibling;
+  const btnDesktop = document.querySelector('#soundToggleDesktop');
+  btnDesktop?.addEventListener('click', () => {
+    videoDesktop.muted = !videoDesktop.muted;
+    btnDesktop.textContent = videoDesktop.muted ? 'Enable sound' : 'Disable sound';
+  });
+
+  // Mobile sound toggle
+  const videoMobile = document.querySelector('#leftVideoMobile');
+  const btnMobile = document.querySelector('#soundToggleMobile');
+  btnMobile?.addEventListener('click', () => {
+    videoMobile.muted = !videoMobile.muted;
+    btnMobile.textContent = videoMobile.muted ? 'Enable sound' : 'Disable sound';
+  });
+
+  document.addEventListener("DOMContentLoaded", () => {
+  const steps = document.querySelectorAll(".step-trigger");
+  const panels = document.querySelectorAll(".step-panel");
+
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const step = entry.target.dataset.step;
+        panels.forEach(panel => {
+          panel.classList.remove("active");
+        });
+        document.getElementById(`step-${step}`).classList.add("active");
+      }
+    });
+  }, { threshold: 0.6 });
+
+  steps.forEach(step => io.observe(step));
+});

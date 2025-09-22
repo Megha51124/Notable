@@ -227,10 +227,7 @@ button {
   .viewport { grid-template-columns: 1fr 1fr; }
 }
 
-/* --- Video --- */
-/* .video-box {
-  position: relative; /* for the absolute-positioned button */
-/* } */ 
+
 
 .video-box {
   display: flex;
@@ -410,3 +407,6 @@ button {
     transform: translate(0, 0) !important;
   }
 
+
+
+  
