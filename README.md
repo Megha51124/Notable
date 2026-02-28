@@ -12,7 +12,7 @@ https://notable-orpin.vercel.app
 
 📌 Project Overview
 <br>
-▫️This website was developed as a freelance project for a client who wanted a clean and visually engaging  platform to present their product idea to  partners, and stakeholders.
+▫️This website was developed as a freelance project for a client who wanted a clean and visually engaging  platform to present their product idea to  partners, and stakeholders.<br>
 ▫️The website introduces Notable, a distraction-free e-ink based learning ecosystem, and focuses on clearly communicating the product vision, goals, and key features through a modern and minimal design.
 <br>
 
